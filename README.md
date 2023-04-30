@@ -12,12 +12,13 @@ This script extracts email addresses and phone numbers from emails in your Gmail
 ## Usage
 
 1. Clone the repository or download the script file to your local computer.
+2. Create .env file and add new 2 lines - `EMAIL=YourEmail` , `EMAIL_PASSWORD=YourEmailPassword` , then replace it with your data. 
 
-2. Update the script: You need to update the script with your Gmail credentials and the email address you want to extract data from. Replace 'email' with your Gmail address and 'application password' with your Gmail application-specific password.
+3. Update the script: You need to update the script with your Gmail credentials and the email address you want to extract data from. Replace 'email' with your Gmail address and 'application password' with your Gmail application-specific password.
 
-3. Save the script: Save the updated script in a file with a .py extension.
+4. Save the script: Save the updated script in a file with a .py extension.
 
-4. Run the script: Open your terminal/command prompt, navigate to the directory where the script is saved, and run the script by typing the following command:
+5. Run the script: Open your terminal/command prompt, navigate to the directory where the script is saved, and run the script by typing the following command:
 
 
 Replace 'script-name' with the name of your script file.

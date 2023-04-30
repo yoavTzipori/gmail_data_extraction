@@ -3,3 +3,4 @@ Pip install pandas openpyxl
 imaplib
 email
 pandas
+python-dotenv
