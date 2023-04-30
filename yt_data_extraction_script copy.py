@@ -1,20 +1,26 @@
 import imaplib
-import email
+import os
 import re
+
 import pandas as pd
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # URL for IMAP connection
 imap_url = 'imap.gmail.com'
 
 my_mail = imaplib.IMAP4_SSL(imap_url)
 
-# Log in using your credentials
-my_mail.login('email','application password')
+# Get the credential from .env file
+email = os.getenv('EMAIL')
+email_password = os.getenv('EMAIL_PASSWORD')
+my_mail.login(email, email_password)
 
 # Select the Inbox to fetch messages
 my_mail.select('Inbox')
 
-#change the value to the email that you want to extract data from
+# change the value to the email that you want to extract data from
 key = 'FROM'
 value = 'the email address that you want to extart the data from'
 _, data = my_mail.search(None, key, value)  # Search for emails with specific key and value
@@ -55,7 +61,6 @@ with open(output_file_path, 'w') as f:
                                     f.write(f'Email: {email_match}\n')
                                 elif phone_match:
                                     f.write(f'Phone: {phone_match}\n')
-
 
 # change it to the output file.txt that was created on the last function
 with open('path/to/the/outputfile/file.txt', 'r') as f:
